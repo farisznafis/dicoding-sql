@@ -63,3 +63,42 @@ or prefecture = 'Shizuoka';
 select *
 from shinkansen_station
 where not year = 1988;
+
+-- LIKE
+select *
+from shinkansen_station
+where prefecture like 's%';
+
+-- ALIAS
+select station_name as nama_stasiun,
+	   year as tahun,
+	   distance_from_tokyo as jarak_dari_tokyo
+from shinkansen_station;
+
+-- UPDATE
+update shinkansen_station
+set station_name = 'Bandung'
+where station_name = 'Atami';
+
+select *
+from shinkansen_station
+where station_name = 'Bandung';
+
+update shinkansen_station
+set station_name = 'Atami'
+where station_name = 'Bandung';
+-- ORDER BY
+select *
+from shinkansen_station
+order by station_name desc;
+
+-- LIMIT
+select *
+from shinkansen_station
+limit 7;
+
+-- OFFSET
+select *
+from shinkansen_station
+limit 7
+offset 3;
